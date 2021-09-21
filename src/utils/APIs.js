@@ -80,7 +80,7 @@ export const addUser = (data) =>
     Axios.post("http://localhost:5001/users/add-user", data)
 
 export const isAuth = () =>
-    Axios.get("http://localhost:5001/users/isAuth")
+    Axios.post("http://localhost:5001/users/isAuth")
 
 //data = {email, password}
 export const login = (data) =>
