@@ -6,6 +6,7 @@ Axios.defaults.withCredentials = true;
 //data = {product_id: XXX}
 
 export const addToCart = (data) =>
+//http://localhost:5001
     Axios.post("https://backend-ecommerce-app.herokuapp.com/cart/get-cart", { withCredentials: true }).then(res => {
 
         if (!res.data.message) {
