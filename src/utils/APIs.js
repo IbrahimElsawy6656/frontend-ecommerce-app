@@ -6,7 +6,7 @@ Axios.defaults.withCredentials = true;
 //data = {product_id: XXX}
 
 export const addToCart = (data) =>
-    Axios.post("http://localhost:5001/cart/get-cart").then(res => {
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/cart/get-cart", { withCredentials: true }).then(res => {
 
         if (!res.data.message) {
 
@@ -19,85 +19,85 @@ export const addToCart = (data) =>
                 updateCart(data);
             }
             else {
-                Axios.post("http://localhost:5001/cart/add-to-cart", data);
+                Axios.post("https://backend-ecommerce-app.herokuapp.com/cart/add-to-cart", data, { withCredentials: true });
             }
         }
         else {
-            Axios.post("http://localhost:5001/cart/add-to-cart", data);
+            Axios.post("https://backend-ecommerce-app.herokuapp.com/cart/add-to-cart", data, { withCredentials: true });
         }
 
     })
 
 export const getCart = () =>
-    Axios.post("http://localhost:5001/cart/get-cart")
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/cart/get-cart", { withCredentials: true })
 
 //data = {product_id: XXX}
 export const deleteFromCart = (data) =>
-    Axios.post("http://localhost:5001/cart/delete-from-cart", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/cart/delete-from-cart", data, { withCredentials: true })
 
 export const deleteAllCart = () =>
-    Axios.post("http://localhost:5001/cart/delete-cart")
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/cart/delete-cart", { withCredentials: true })
 
 //data = {product_id: XXX, quantity: XXX}
 export const updateCart = (data) =>
-    Axios.post("http://localhost:5001/cart/update-cart", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/cart/update-cart", data, { withCredentials: true })
 
 
 // --------------------------------- PROMO ------------------------------------------
 
 //data = {promo_code: XXX, status: XXX}
 export const updatePromo = (data) =>
-    Axios.post("http://localhost:5001/promo/update-promo", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/promo/update-promo", data, { withCredentials: true })
 
 //data = {promo_code: XXX, discount: XXX}
 export const addPromo = (data) =>
-    Axios.post("http://localhost:5001/promo/add-promo", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/promo/add-promo", data, { withCredentials: true })
 
 export const checkPromo = (data) =>
-    Axios.post("http://localhost:5001/promo/check-promo", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/promo/check-promo", data, { withCredentials: true })
 
 
 // --------------------------------- ORDER ------------------------------------------
 
 //data = { promo_code: XXX }
 export const addOrder = (data) =>
-    Axios.post("http://localhost:5001/orders/add-order", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/orders/add-order", data, { withCredentials: true })
 
 export const getAllOrders = () =>
-    Axios.post("http://localhost:5001/orders/get-all-orders")
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/orders/get-all-orders", { withCredentials: true })
 
 export const deleteOrder = () =>
-    Axios.post("http://localhost:5001/orders/delete-order")
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/orders/delete-order", { withCredentials: true })
 
 export const getMyOrder = (data) =>
-    Axios.post("http://localhost:5001/orders/get-my-order", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/orders/get-my-order", data, { withCredentials: true })
 
 
 // --------------------------------- USER ------------------------------------------
 
 //data = {email, password, type, address, date_of_birth, full_name }
 export const addUser = (data) =>
-    Axios.post("http://localhost:5001/users/add-user", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/users/add-user", data, { withCredentials: true })
 
 export const isAuth = () =>
-    Axios.post("http://localhost:5001/users/isAuth")
+    Axios.get("https://backend-ecommerce-app.herokuapp.com/users/isAuth", { withCredentials: true })
 
 //data = {email, password}
 export const login = (data) =>
-    Axios.post("http://localhost:5001/users/login", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/users/login", data, { withCredentials: true })
 
 export const getAllUsers = () =>
-    Axios.post("http://localhost:5001/users/get-all-users")
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/users/get-all-users", { withCredentials: true })
 
 export const logout = () =>
-    Axios.post("http://localhost:5001/users/logout")
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/users/logout", { withCredentials: true })
 
 // --------------------------------- PRODUCT ------------------------------------------
 
 //data = {product_id}
 
 export const getProduct = (data) =>
-    Axios.post("http://localhost:5001/products/get-product", data)
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/products/get-product", data, { withCredentials: true })
 
 export const getAllProducts = () =>
-    Axios.post("http://localhost:5001/products/get-all-products")
+    Axios.post("https://backend-ecommerce-app.herokuapp.com/products/get-all-products", { withCredentials: true })
